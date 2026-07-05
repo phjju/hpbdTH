@@ -1,0 +1,251 @@
+* {
+    font-family: 'Segoe UI', 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #000;
+    height: 100vh;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.falling-image {
+    position: absolute;
+    top: -200px;
+    transition: top 2s, transform 1s;
+    max-width: 100%;
+    transform-origin: bottom center;
+    animation: sway 6s linear 0s 1 normal none running;
+}
+
+.imgAvatar1 {
+    position: absolute;
+    width: 200px;
+    height: auto;
+    animation: shakeHorizontal 2s infinite alternate;
+    border-radius: 20px;
+    border: 2px solid white;
+}
+
+@keyframes shakeHorizontal {
+    0% {
+        transform: rotate(-5deg);
+    }
+
+    50% {
+        transform: rotate(5deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes sway {
+    0% {
+        transform: rotate(-5deg);
+    }
+
+    50% {
+        transform: rotate(5deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.bongbaylen {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 100%;
+    transform-origin: bottom center;
+    animation: balloon-up 10s ease forwards;
+    display: none;
+    z-index: 10000;
+}
+
+#fadeImage,
+#imgAvatar,
+#imgAvatar1,
+#imgAvatar2,
+#imgAvatar3 {
+    opacity: 0;
+    transition: opacity 2s ease;
+}
+
+@keyframes balloon-up {
+    0% {
+        top: 100%;
+    }
+
+    100% {
+        top: -500px;
+    }
+}
+
+#playButton {
+    width: 100px;
+    height: 50px;
+}
+
+.hpbdtext,
+.hpbdtextEnd {
+    height: 50px;
+    font-size: 20px;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+}
+
+.hpbdtextEnd {
+    display: block;
+    color: #e07777;
+    opacity: 0;
+    transition: opacity 2s ease;
+    white-space: nowrap;
+    filter: drop-shadow(0 0 20px #e07777) drop-shadow(0 0 50px #e07777);
+}
+
+/* ===== Typewriter via JS (no black text block) ===== */
+h2 {
+    position: relative;
+    font-size: 6em;
+    color: transparent;
+    user-select: none;
+}
+
+.hpbdtext.typing-active {
+    color: #e07777;
+    filter: drop-shadow(0 0 20px #e07777) drop-shadow(0 0 50px #e07777);
+    animation: blink-caret 0.7s step-end infinite;
+}
+
+@keyframes blink-caret {
+    50% { border-color: transparent; }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .header {
+        transform: scale(1.2);
+        transform-origin: top center;
+    }
+
+    .container {
+        transform: none;
+        width: 100%;
+    }
+
+    .container #image {
+        width: 82vw;
+        max-width: 420px;
+        top: -140px;
+    }
+
+    .body {
+        width: 100%;
+    }
+
+    /* ===== Zigzag vertical layout for 4 photos ===== */
+    .loadavatar {
+        position: relative;
+        width: 100%;
+        min-height: 760px;
+    }
+
+    .loadavatar img {
+        width: 38vw !important;
+        max-width: 200px !important;
+        margin: 0 !important;
+    }
+
+    #imgAvatar {
+        left: 4%;
+        top: 200px;
+    }
+
+    #imgAvatar1 {
+        left: 50%;
+        top: 310px;
+    }
+
+    #imgAvatar2 {
+        left: 4%;
+        top: 420px;
+    }
+
+    #imgAvatar3 {
+        left: 50%;
+        top: 530px;
+    }
+
+    .bongbaylen {
+        width: 72vw;
+        max-width: 340px;
+        top: 72px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    h2.typing-active {
+        font-size: 2em;
+    }
+
+    .hpbdtext,
+    .hpbdtextEnd {
+        width: 96%;
+        top: 80%;
+        font-size: 18px;
+        text-align: center;
+        line-height: 1.4;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #fadeImage {
+        width: 150px !important;
+        height: 150px !important;
+    }
+
+    #playButton {
+        width: 92px !important;
+        height: 44px !important;
+        font-size: 14px;
+    }
+
+    .header .lightrope li {
+        width: 8px;
+        height: 20px;
+        margin: 12px;
+    }
+
+    .falling-image {
+        max-width: 24%;
+    }
+
+    .imgAvatar1 {
+        width: auto;
+        max-width: 38vw;
+    }
+
+    #playButton {
+        width: 100px !important;
+        height: 48px !important;
+        font-size: 16px !important;
+    }
+}

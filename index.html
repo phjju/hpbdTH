@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style1.css">
+    <link rel="stylesheet" href="./css/style2.css">
+    <link rel="stylesheet" href="css/stylePhaoHoa.css">
+    <script type="text/JavaScript" src="js/phaohoa.js"></script>
+    <link rel="stylesheet" href="css/btnstyle.css">
+    <title>Happy Birthday</title>
+    <script defer src="js/main.js"></script>
+    <style>
+        /* ===== Always-visible bottom nav bar ===== */
+        .nav-bar {
+            position: fixed !important;
+            bottom: 18px !important;
+            left: 50% !important;
+            transform: translateX(-50%) !important;
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            gap: 12px !important;
+            z-index: 99999 !important;
+            background: rgba(0,0,0,0.5) !important;
+            backdrop-filter: blur(8px) !important;
+            -webkit-backdrop-filter: blur(8px) !important;
+            padding: 10px 18px !important;
+            border-radius: 60px !important;
+            border: 1px solid rgba(255,255,255,0.15) !important;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4) !important;
+            width: auto !important;
+            flex-wrap: wrap !important;
+        }
+
+        .nav-bar button {
+            padding: 10px 22px !important;
+            border: none !important;
+            border-radius: 50px !important;
+            font-size: 15px !important;
+            font-weight: 700 !important;
+            cursor: pointer !important;
+            transition: all 0.3s ease !important;
+            color: #fff !important;
+            letter-spacing: 0.5px !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 6px !important;
+            min-width: 72px !important;
+            justify-content: center !important;
+        }
+        .nav-bar button:hover {
+            transform: translateY(-3px) scale(1.06) !important;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3) !important;
+        }
+
+        /* Start button — gold gradient */
+        .nav-bar .btn-start {
+            background: linear-gradient(135deg, #f6d365, #fda085) !important;
+            color: #5a3e00 !important;
+        }
+        /* 2024 — blue/purple gradient */
+        .nav-bar .btn-2024 {
+            background: linear-gradient(135deg, #667eea, #764ba2) !important;
+        }
+        /* 2025 — pink gradient */
+        .nav-bar .btn-2025 {
+            background: linear-gradient(135deg, #f093fb, #f5576c) !important;
+        }
+        /* 2026 — teal/cyan gradient */
+        .nav-bar .btn-2026 {
+            background: linear-gradient(135deg, #43e97b, #38f9d7) !important;
+            color: #004d40 !important;
+        }
+
+        /* ===== Bigger balloon on mobile ===== */
+        @media (max-width: 768px) {
+            .nav-bar {
+                padding: 8px 14px !important;
+                gap: 8px !important;
+                bottom: 12px !important;
+                width: 94% !important;
+                max-width: 500px !important;
+            }
+            .nav-bar button {
+                padding: 8px 14px !important;
+                font-size: 13px !important;
+                min-width: 60px !important;
+                flex: 1 !important;
+            }
+            /* Bigger balloon on mobile */
+            .bongbaylen {
+                width: 90vw !important;
+                max-width: 440px !important;
+            }
+        }
+        @media (max-width: 400px) {
+            .nav-bar button {
+                font-size: 11px !important;
+                padding: 6px 10px !important;
+                min-width: 48px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header" style ="display: none; opacity: 0; transition: opacity 2s ease;" id="hd">
+            <ul class="lightrope">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+    </div>
+    <div class="body">
+        <div class="container"> <!-- Thêm một container để căn giữ hình ảnh -->
+            <img id="image" class="falling-image" src="img/banner.png" style ="z-index: 100;" alt="Falling Image">
+        </div>
+        <div class="loadavatar">
+            <img id="imgAvatar" class="falling-image" src="img/h4.jpg" style="opacity: 0;" alt="Falling Image">
+            <img id="imgAvatar1" class="falling-image" src="img/h2.jpg" style="opacity: 0;" alt="Falling Image">
+            <img id="imgAvatar2" class="falling-image" src="img/h3.jpg" style="opacity: 0;" alt="Falling Image">
+            <img id="imgAvatar3" class="falling-image" src="img/h5.jpg" style="opacity: 0;" alt="Falling Image">
+        </div>
+    </div>
+
+    <!-- ===== Always-visible bottom navigation bar ===== -->
+    <div class="nav-bar">
+        <button id="playButton" class="btn-start">▶ Start</button>
+        <button class="btn-2024" onclick="window.location.href='./video.html'">🎬 2024</button>
+        <button class="btn-2025" onclick="window.location.href='./2025.html'">🎉 2025</button>
+        <button class="btn-2026" onclick="window.location.href='./2026.html'">🎂 2026</button>
+    </div>
+
+    <div style="display: flex; position: relative; justify-content: center; top: 50%;">
+        <img id="fadeImage" src="img/banh.png" alt="Fading Image" style="width: 200px; height: 200px;">
+    </div>
+    <img id="image112" class="bongbaylen" src="img/Balloon-Border.png" alt="Falling balloon border">
+    <h2 id="texthpbd" class="hpbdtext" data-text="&nbsp;Chúc Chị Hiền&nbsp;">&nbsp;Chúc Chị Hiền&nbsp;</h2>
+    <div id="texthpbdEnd" class="hpbdtextEnd">Chúc Mừng Sinh Nhật ᥫ᭡.ᥫ᭡.ᥫ᭡.</div>
+    <canvas id="canvas" style="display: none; opacity: 0; transition: opacity 2s ease;"></canvas>
+</body>
+</html>
